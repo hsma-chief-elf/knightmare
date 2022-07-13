@@ -56,6 +56,15 @@ class Dungeoneer:
         room.item_list.remove(chosen_item)
         self.pouch.append(chosen_item)
         
+    def drop_item(self, item):
+        print (f"Attempting to drop {item}")
+        
+        if item in self.pouch:
+            self.pouch.remove(item)
+            print (f"You have dropped {item}")
+        else:
+            print (f"You are not carrying {item}")
+        
 dans_dungeon = Dungeon("Dan's Dungeon")
 hsma_room = Room(8, dans_dungeon, ["Bread", "Apple", "Potion", "Scroll"])
 dan_the_dungeoneer = Dungeoneer("Dan")
